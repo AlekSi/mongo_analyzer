@@ -1,0 +1,150 @@
+body {
+  background-color: #3e4045;
+  color: #fff;
+  font-family: 'Lucida Sans', 'Lucida Grande', Verdana, Arial, sans-serif;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: "AUdimat", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+a {
+  color: #db1b1b;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+}
+
+th {
+  font-family: "AUdimat", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  padding-bottom: 2px;
+}
+
+th span {
+  cursor: pointer;
+}
+
+td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+thead tr {
+  border-bottom: 2px solid #3E4045;
+}
+
+tbody tr:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+#simplemodal-container a.modalCloseImg {
+  background:url(/images/x.png) no-repeat; /* adjust url as required */
+  width:25px;
+  height:29px;
+  display:inline;
+  z-index:3200;
+  position:absolute;
+  top:-15px;
+  right:-18px;
+  cursor:pointer;
+}
+
+#simplemodal-overlay { background-color:#000; }
+#simplemodal-container { background-color:#333; border:8px solid #444; padding:12px; color: #fff; }
+
+.modal {
+  display: none;
+}
+
+.modal h2 {
+  font-family: "AUdimat", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.small {
+  font-size: 10px;
+}
+
+#top {
+  background-color: #484848;
+  padding: 5px 0px 5px 5px;
+  border-bottom: 2px solid #333;
+}
+
+#footer a {
+  color: #ccc;
+}
+
+#title {
+  font-family: "AUdimat", "Helvetica", "Arial", "Lucida Grande", "Verdana", "Gill Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+#title-analyzer {
+  color: #db1b1b;
+}
+
+#time {
+  float: right;
+  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+  margin-top: 13px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+#content {
+  background-color: #484848;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #333;
+}
+
+#slow-queries-date {
+  width: 180px;
+}
+
+#profiling-level h2 {
+  display: inline;
+  font-size: 13px;
+}
+
+#profiling-level {
+  margin-top: 10px;
+  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+}
+
+#footer {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: #ccc;
+  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+}
+
+#db-stats {
+  margin-top: 10px;
+  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+  clear: both;
+}
+
+#db-stats dt {
+  font-weight: bold;
+  float: left;
+}
+
+#db-stats dd {
+  padding-left: 90px;
+}

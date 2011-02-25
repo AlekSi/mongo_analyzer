@@ -1,0 +1,29 @@
+@font-face {
+font-family: 'AUdimat';
+src: local('☺'), url('/fonts/audimat-bold-webfont.ttf') format('truetype');
+font-weight: 700;
+font-style: normal;
+}
+
+
+@font-face {
+font-family: 'AUdimat';
+src: local('☺'), url('/fonts/audimat-bolditalic-webfont.ttf') format('truetype');
+font-weight: 700;
+font-style: italic;
+}
+
+
+@font-face {
+font-family: 'AUdimat';
+src: local('☺'), url('/fonts/audimat-italic-webfont.ttf') format('truetype');
+font-weight: 400;
+font-style: italic;
+}
+
+@font-face {
+font-family: 'Inconsolata';
+src: local('☺'), url('/fonts/Inconsolata-webfont.woff') format('woff');
+font-weight: 500;
+font-style: normal;
+}

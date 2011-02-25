@@ -1,0 +1,46 @@
+<div id="modal-change-profiling-level" class="modal">
+  <h2>Change profiling level</h2>
+
+  Set to
+  <a href="/profiling_level/off">Off</a>,
+  <a href="/profiling_level/slow_only">Slow only</a> <span class="small">(&gt; 100ms)</span>,
+  <a href="/profiling_level/all">Full</a>
+</div>
+
+<h1>Database: <%= @database_name %></h1>
+
+<dl id="db-stats">
+  <dt>Collections:</dt>
+  <dd><%= @stats["collections"] %></dd>
+
+  <dt>Data size:</dt>
+  <dd><%= ((@stats["dataSize"]/1024)/1024).round(2) %> MB</dd>
+
+  <dt>Index size:</dt>
+  <dd><%= ((@stats["indexSize"]/1024)/1024).round(2) %> MB</dd>
+</dl>
+
+<div id="profiling-level">
+  <h2>&raquo; Profiling level:</h2>
+  <%= @profiling_level %>
+  <a href="#" id="change-profiling-level">Change</a>
+</div>
+
+<table id="slow-queries">
+  <thead>
+    <tr>
+      <th id="slow-queries-date"><span>Date</span></th>
+      <th><span>Query</span></th>
+      <th><span>Time</span></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @slow_queries.each do |query| %>
+    <tr>
+      <td><%= query["ts"] %></td>
+      <td><%= query["info"] %></td>
+      <td><%= query["millis"] %> ms</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
