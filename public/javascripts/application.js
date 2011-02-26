@@ -5,4 +5,12 @@ $(document).ready(function() {
     $("#modal-change-profiling-level").modal();
     return false;
   })
+
+  $("#slow-queries tr").bind("click", function(){
+    if ($(this).hasClass("tr-highlighted")) {
+      $(this).removeClass("tr-highlighted");
+    } else {
+      $(this).addClass("tr-highlighted");
+    }
+  })
 }); 
