@@ -31,16 +31,22 @@
     <tr>
       <th id="slow-queries-date"><span>Date</span></th>
       <th><span>Query</span></th>
-      <th><span>Time</span></th>
+      <th><span>Time (ms)</span></th>
     </tr>
   </thead>
   <tbody>
+  <% if @slow_queries.size == 0 %>
+    <tr>
+      <td colspan="3" id="slow-queries-no-queries">No logged queries.</td>
+    </tr>
+  <% else %>
   <% @slow_queries.each do |query| %>
     <tr>
-    <td><%= query["ts"] %></td>
-    <td><%= query["info"] %></td>
-      <td><%= query["millis"] %> ms</td>
+      <td><%= query["ts"] %></td>
+      <td><%= query["info"] %></td>
+      <td><%= query["millis"] %></td>
     </tr>
+  <% end %>
   <% end %>
   </tbody>
 </table>

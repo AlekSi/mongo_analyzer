@@ -42,6 +42,10 @@ thead tr {
   border-bottom: 2px solid #3E4045;
 }
 
+tbody tr {
+  cursor: pointer;
+}
+
 tbody tr:hover {
   background-color: #ccc;
   color: #000;
@@ -114,6 +118,19 @@ tbody tr:hover {
 
 #slow-queries-date {
   width: 180px;
+}
+
+#slow-queries-no-queries {
+  text-align: center;
+}
+
+#slow-queries-no-queries:hover {
+  color: #fff;
+  background-color: #484848;
+}
+
+.tr-highlighted {
+  background-color: #383838;
 }
 
 #profiling-level h2 {
