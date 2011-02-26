@@ -11,8 +11,12 @@ require 'uri'
   
 db = Mongo::Connection.new.db(config[:database])
 
+skipped_collections = ["system.users", "system.indexes", "system.profile"]
+
 get '/' do
   @database_name = config[:database]
+  @collection_names = db.collection_names
+  skipped_collections.each { |collection| @collection_names.delete(collection) }
 
   case db.profiling_level
     when :off then @profiling_level = "Off"

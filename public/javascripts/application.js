@@ -5,6 +5,11 @@ $(document).ready(function() {
     $("#modal-change-profiling-level").modal();
     return false;
   })
+  
+  $("#show-collections").bind("click", function(){
+    $("#modal-show-collections").modal();
+    return false;
+  })
 
   $("#slow-queries tr").bind("click", function(){
     if ($(this).hasClass("tr-highlighted")) {

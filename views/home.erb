@@ -7,11 +7,30 @@
   <a href="/profiling_level/all">Full</a>
 </div>
 
+<div id="modal-show-collections" class="modal">
+  <h2>Collections</h2>
+
+  <ul id="collections">
+  <% if @collection_names.size == 0 %>
+    <li>No collections</li>
+  <% else %>
+    <% @collection_names.each do |collection| %>
+      <li>
+        <%= collection %>
+        <ul>
+          <li><a href="/indexes/<%= URI.encode(collection) %>">Indexes</a></li>
+        </ul>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
+</div>
+
 <h1>Database: <%= @database_name %></h1>
 
 <dl id="db-stats">
   <dt>Collections:</dt>
-  <dd><%= @stats["collections"] %></dd>
+  <dd><%= @collection_names.size %> <a href="#" id="show-collections">Show</a></dd>
 
   <dt>Data size:</dt>
   <dd><%= sprintf("%.2f", (@stats["dataSize"]/1024.to_f)/1024) %> MB</dd>
