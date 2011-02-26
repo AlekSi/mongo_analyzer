@@ -14,10 +14,10 @@
   <dd><%= @stats["collections"] %></dd>
 
   <dt>Data size:</dt>
-  <dd><%= ((@stats["dataSize"]/1024)/1024).round(2) %> MB</dd>
+  <dd><%= sprintf("%.2f", (@stats["dataSize"]/1024.to_f)/1024) %> MB</dd>
 
   <dt>Index size:</dt>
-  <dd><%= ((@stats["indexSize"]/1024)/1024).round(2) %> MB</dd>
+  <dd><%= sprintf("%.2f", (@stats["indexSize"]/1024.to_f)/1024) %> MB</dd>
 </dl>
 
 <div id="profiling-level">
@@ -37,8 +37,8 @@
   <tbody>
   <% @slow_queries.each do |query| %>
     <tr>
-      <td><%= query["ts"] %></td>
-      <td><%= query["info"] %></td>
+    <td><%= query["ts"] %></td>
+    <td><%= query["info"] %></td>
       <td><%= query["millis"] %> ms</td>
     </tr>
   <% end %>

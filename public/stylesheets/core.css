@@ -148,3 +148,19 @@ tbody tr:hover {
 #db-stats dd {
   padding-left: 90px;
 }
+
+#indexes {
+  list-style-type: square;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+}
+
+#indexes li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.index-name {
+  font-weight: bold;
+}

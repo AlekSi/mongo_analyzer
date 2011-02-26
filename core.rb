@@ -2,12 +2,13 @@ require 'rubygems'
 require 'sinatra'
 require 'erb'
 require 'mongo'
+require 'uri'
 
 ## config
   config = Hash.new
   config[:database] = "graylog2"
 ##
-
+  
 db = Mongo::Connection.new.db(config[:database])
 
 get '/' do
@@ -25,7 +26,14 @@ get '/' do
 
   @stats = db.stats
 
-  erb :index
+  erb :home
+end
+
+get '/indexes/:collection' do
+  coll = db.collection(params[:collection])
+  @indexes = coll.index_information
+
+  erb :indexes
 end
 
 # should be a post, but fuck this shit.
@@ -39,4 +47,31 @@ get '/profiling_level/:what' do
   else
     "Not allowed profiling level: #{what}. Allowed: #{allowed_types.inspect}"
   end
+end
+
+get '/drop_index/:collection/:index' do
+  coll = db.collection(params[:collection])
+  coll.drop_index(params[:index])
+  redirect "/indexes/#{URI.escape(params[:collection])}"
+end
+
+post '/add_index/:collection' do
+  if params[:ordering] == nil or params[:ordering].length == 0
+    ordering = Mongo::ASCENDING
+  else
+    case (params[:ordering])
+      when "ascending" then ordering = Mongo::ASCENDING
+      when "descending" then ordering = Mongo::DESCENDING
+      else ordering = Mongo::ASCENDING
+    end
+  end
+
+  options = Hash.new
+  options[:unique] = true if params[:unique] != nil and params[:unique] == "true"
+  options[:background] = true if params[:background] != nil and params[:background] == "true"
+
+  coll = db.collection(params[:collection])
+  coll.create_index([[params[:index], ordering]], options)
+
+  redirect "/indexes/#{URI.escape(params[:collection])}"
 end

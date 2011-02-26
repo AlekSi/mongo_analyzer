@@ -1,0 +1,35 @@
+<h1>Indexes of collection: <%= params[:collection] %></h1>
+
+<ul id="indexes">
+<% if @indexes.count == 0 %>
+  <li>No indexes</li>
+<% else %>
+  <% @indexes.each do |name, index| %>
+    <li>
+      <span class="index-name"><%= name %></span>
+      <%= index["key"].inspect %>
+      <a href="/drop_index/<%= URI.escape(params[:collection]) %>/<%= URI.escape(name) %>">Drop</a>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<br /><br />
+<form action="/add_index/<%= URI.escape(params[:collection]) %>" method="POST">
+  <label for="index">Field:</label>
+  <input type="text" name="index" />
+
+  <input type="radio" name="ordering" value="ascending" id="ordering-ascending" checked="checked">
+  <label for="ordering-ascending">Ascending</label>
+  <input type="radio" name="ordering" value="descending" id="ordering-descending">
+  <label for="ordering-descending">Descending</label>
+
+  <br />
+  <input type="checkbox" name="background" id="background" value="true" %>
+  <label for="background">Generate in background</label>
+  
+  <input type="checkbox" name="unique" id="unique" value="true" %>
+  <label for="unique">Unique index</label>
+
+  <input type="submit" value="Create index" />
+</form>
