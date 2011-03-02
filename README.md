@@ -3,7 +3,7 @@ A Sinatra web application that allows you to enable the
 [MongoDB profiler](http://www.mongodb.org/display/DOCS/Optimization#Optimization-UsingtheProfiler)
 and see it's results. You can also see and manage the indexes of your collections.
 
-Go to http://www.lennartkoopmann.net/POST_HERE for more information and screenshots.
+Go to http://www.lennartkoopmann.net/post/3603788835/mongo-analyzer for more information and screenshots.
 
 ### Installation
  1. Clone repository: `https://lennartkoopmann@github.com/lennartkoopmann/mongo_analyzer.git`
