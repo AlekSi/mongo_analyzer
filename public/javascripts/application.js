@@ -23,4 +23,13 @@ $(document).ready(function() {
       $(this).addClass("tr-highlighted");
     }
   })
+  
+  $(".confirm-link").bind("click", function(){
+    if (confirm("Really?")) {
+      window.location($(this).attr("href"));
+    } else {
+      return false;
+    }
+  })
+
 }); 

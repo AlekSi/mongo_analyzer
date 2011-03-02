@@ -12,7 +12,7 @@
     <li>
       <span class="index-name"><%= name %></span>
       <%= index["key"].inspect %>
-      <a href="/drop_index/<%= URI.escape(params[:collection]) %>/<%= URI.escape(name) %>">Drop</a>
+      <a href="/drop_index/<%= URI.escape(params[:collection]) %>/<%= URI.escape(name) %>" class="confirm-link">Drop</a>
     </li>
   <% end %>
 <% end %>
