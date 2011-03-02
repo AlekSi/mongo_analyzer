@@ -7,6 +7,13 @@
   <a href="/profiling_level/all">Full</a>
 </div>
 
+<div id="modal-reset-query-log" class="modal">
+  <h2>Reset query log</h2>
+  This will remove all logged queries.
+  <br /><br />
+  <a href="/clear_query_log">Yes, please do that!</a>
+</div>
+
 <div id="modal-show-collections" class="modal">
   <h2>Collections</h2>
 
@@ -43,6 +50,8 @@
   <h2>&raquo; Profiling level:</h2>
   <%= @profiling_level %>
   <a href="#" id="change-profiling-level">Change</a>
+  |
+  <a href="#" id="reset-query-log">Reset query log</a>
 </div>
 
 <table id="slow-queries">

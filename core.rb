@@ -1,7 +1,4 @@
-require 'rubygems'
-require 'sinatra'
 require 'erb'
-require 'mongo'
 require 'uri'
 
 ## config
@@ -51,6 +48,20 @@ get '/profiling_level/:what' do
   else
     "Not allowed profiling level: #{what}. Allowed: #{allowed_types.inspect}"
   end
+end
+
+get '/clear_query_log' do
+  # We must disable profiling before dropping the profile collection.
+  old_profile_level = db.profiling_level
+  db.profiling_level = :off
+
+  # Drop the logs.
+  db.collection("system.profile").drop
+
+  # Set profiling level back to old state.
+  db.profiling_level = old_profile_level
+
+  redirect "/"
 end
 
 get '/drop_index/:collection/:index' do

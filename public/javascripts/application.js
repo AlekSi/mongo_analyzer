@@ -10,6 +10,11 @@ $(document).ready(function() {
     $("#modal-show-collections").modal();
     return false;
   })
+  
+  $("#reset-query-log").bind("click", function(){
+    $("#modal-reset-query-log").modal();
+    return false;
+  })
 
   $("#slow-queries tr").bind("click", function(){
     if ($(this).hasClass("tr-highlighted")) {
