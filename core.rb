@@ -19,13 +19,15 @@
 
 require 'erb'
 require 'uri'
+require 'yaml'
 
-## config
-  config = Hash.new
-  config[:database] = "graylog2"
-##
-  
-db = Mongo::Connection.new.db(config[:database])
+config = YAML.load_file("config.yml")
+
+db = Mongo::Connection.new(config["mongodb"]["host"], config["mongodb"]["port"], {:slave_ok => true}).db(config["mongodb"]["database"])
+
+if config["mongodb"]["use_auth"]
+  db.authenticate(config["mongodb"]["username"], config["mongodb"]["password"], true)
+end
 
 skipped_collections = ["system.users", "system.indexes", "system.profile"]
 
