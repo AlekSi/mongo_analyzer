@@ -6,7 +6,7 @@ and see it's results. You can also see and manage the indexes of your collection
 Go to [http://www.lennartkoopmann.net/post/3603788835/mongo-analyzer](http://www.lennartkoopmann.net/post/3603788835/mongo-analyzer) for more information and screenshots.
 
 ### Installation
- 1. Clone repository: `https://lennartkoopmann@github.com/lennartkoopmann/mongo_analyzer.git`
+ 1. Clone repository: `git clone https://lennartkoopmann@github.com/lennartkoopmann/mongo_analyzer.git`
  2. Go to your new mongo_analyzer folder: `cd mongo_analyzer`
  3. Install the required gems: `bundle install` (You must have bundler installed: http://gembundler.com/)
  4. Copy the `config.yml.example` to `config.yml` and adjust it's content. Should be self-explanatory.
