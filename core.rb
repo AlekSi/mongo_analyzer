@@ -32,7 +32,7 @@ end
 skipped_collections = ["system.users", "system.indexes", "system.profile"]
 
 get '/' do
-  @database_name = config[:database]
+  @database_name = config["mongodb"]["database"]
   @collection_names = db.collection_names
   skipped_collections.each { |collection| @collection_names.delete(collection) }
 
