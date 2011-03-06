@@ -1,3 +1,5 @@
+source :rubygems
+
 gem 'rack'
 gem 'sinatra'
 gem 'mongo', "1.1.1"
