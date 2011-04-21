@@ -1,7 +1,6 @@
 source :rubygems
 
-gem 'rack'
-gem 'sinatra'
-gem 'mongo', "1.1.1"
-gem 'bson', "1.1.1"
-gem 'bson_ext', "1.1.1"
+gem 'rack', '~> 1.2.2'
+gem 'sinatra', '~> 1.2.3'
+gem 'mongo', '~> 1.3.0'
+gem 'bson_ext', '~> 1.3.0'
