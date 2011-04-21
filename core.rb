@@ -42,7 +42,7 @@ get '/' do
     when :all then @profiling_level = "Full"
     else @profiling_level = "Unknown"
   end
- 
+
   # Slow queries. (Converted to array and flipped for better readable order)
   @slow_queries = db.profiling_info.to_a.reverse
 
